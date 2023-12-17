@@ -5,7 +5,7 @@ public class findlongestPalindrome {
     }
 
     public static boolean isCheck(String str, int start, int end) {
-        while (start <= end) {
+        while (start < end) {
             if (str.charAt(start) != str.charAt(end)) {
                 return false;
             } else {
@@ -22,8 +22,8 @@ public class findlongestPalindrome {
         for (int i = 0; i < str.length(); i++) {
             for (int j = i; j < str.length(); j++) {
                 if (isCheck(str, i, j)) {
-                    String t = str.substring(i, j - i + 1);
-                    ans = t.length() > str.length() ? t : ans;
+                    String t = str.substring(i, j+1);
+                    ans = t.length() > ans.length() ? t : ans;
                 }
             }
         }
